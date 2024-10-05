@@ -58,3 +58,14 @@ Each method is stored in a separate files and includes:
 1. Clone this repository to your local machine:
    ```bash
    git clone https://github.com/wasiif/NumericalAnalysis.git
+
+---
+
+## 🌟 Contributions
+
+Contributions are highly welcome! Feel free to fork this repository and submit pull requests for:
+- New numerical methods.
+- Optimizations or improvements to existing methods.
+- Bug fixes or additional language implementations (Python, Java, etc.).
+
+---
