@@ -1,0 +1,69 @@
+
+Numerical Analysis Methods
+
+1. Algorithm for Bisection Method:
+
+   The Bisection Method is a root-finding algorithm that repeatedly divides an interval in half to find a root.
+   
+   Step-by-Step Algorithm:
+   
+   1. Input:
+      - Two initial guesses: a and b such that f(a) and f(b) have opposite signs (i.e., f(a) * f(b) < 0).
+      - A tolerance value ε (the desired accuracy).
+      - Maximum number of iterations max_iter to limit the procedure.
+
+   2. Step 1 (Check Bracketing):
+      - Verify that f(a) * f(b) < 0. If not, return an error as the root is not guaranteed within the interval.
+
+   3. Step 2 (Initial Midpoint Calculation):
+      - Calculate the midpoint: c = (a + b) / 2.
+
+   4. Step 3 (Convergence Check):
+      - If |f(c)| <= ε (i.e., f(c) is close enough to zero), return c as the root.
+
+   5. Step 4 (Subinterval Selection):
+      - If f(a) * f(c) < 0, the root lies in the interval [a, c]. Set b = c.
+      - Otherwise, the root lies in [c, b]. Set a = c.
+
+   6. Step 5 (Iteration Loop):
+      - Repeat Steps 2 to 4 until:
+         - The absolute difference between a and b is less than the tolerance (|b - a| < ε), or
+         - The maximum number of iterations is reached.
+
+   7. Output:
+      - The final value of c is the approximate root, or an error message if the method didn't converge within the allowed iterations.
+
+
+2. Algorithm for False Position (Regula Falsi) Method:
+
+   The False Position Method is similar to the Bisection Method but uses a linear interpolation to find the root.
+   
+   Step-by-Step Algorithm:
+   
+   1. Input:
+      - Two initial guesses: x0 and x1 such that f(x0) * f(x1) < 0.
+      - A tolerance value ε (the desired accuracy).
+      - Maximum number of iterations max_iter.
+
+   2. Step 1 (Check Bracketing):
+      - Verify that f(x0) * f(x1) < 0. If not, return an error as the root is not guaranteed.
+
+   3. Step 2 (Calculate the New Estimate):
+      - Compute the new root estimate using the formula:
+        x2 = x0 - (f(x0) * (x1 - x0)) / (f(x1) - f(x0))
+
+   4. Step 3 (Convergence Check):
+      - If |f(x2)| <= ε (i.e., f(x2) is close enough to zero), return x2 as the root.
+
+   5. Step 4 (Subinterval Selection):
+      - If f(x0) * f(x2) < 0, the root lies in [x0, x2]. Set x1 = x2.
+      - Otherwise, the root lies in [x2, x1]. Set x0 = x2.
+
+   6. Step 5 (Iteration Loop):
+      - Repeat Steps 2 to 4 until:
+         - The function value f(x2) is close enough to zero (|f(x2)| < ε), or
+         - The maximum number of iterations is reached.
+
+   7. Output:
+      - The final value of x2 is the approximate root, or an error message if the method didn’t converge within the allowed iterations.
+
