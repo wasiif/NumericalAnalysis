@@ -51,7 +51,7 @@ Here’s a list of the numerical methods you will find in this repository:
 Each method is stored in a separate files and includes:
 - The code implementation in **C++** **Python** (or other programming languages).
 - Algorithm for each Method in a text file.
-- You can view the detailed algorithms [here](./Numerical_Analysis_Algorithms.txt).
+- You can view the detailed algorithms [here](./Algorithms.md).
 
 ---
 
