@@ -74,8 +74,40 @@ This repository contains implementations of various numerical methods for solvin
 7. **Output**:
    - The final value of `x2` is the approximate root, or an error message if the method didn’t converge within the allowed iterations.
 
-#
+## Newton-Raphson Method Algorithm
 
+1. **Input**:
+   - An initial guess: `x0` (a starting point close to the expected root).
+   - A tolerance value `ε` (the desired accuracy, e.g., 0.0001).
+   - Maximum number of iterations `max_iter`.
+
+2. **Define the Function**:
+   - The function \( f(x) \) whose root is to be found.
+   - The derivative of the function \( f'(x) \).
+
+3. **Initialization**:
+   - Set `iteration = 1`.
+
+4. **Process**:
+   - **Step 1**: Calculate \( f(x_0) \) and \( f'(x_0) \).
+   - **Step 2**: Check for division by zero:
+     - If \( f'(x_0) = 0 \), stop the process and report that the derivative is zero (Newton-Raphson cannot continue).
+   - **Step 3**: Update the value using the Newton-Raphson formula:
+     \[
+     x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}
+     \]
+   - **Step 4**: Check convergence:
+     - If \( |f(x_1)| < \varepsilon \), stop the process and report \( x_1 \) as the root.
+   - **Step 5**: Update `x0 = x1` and increment `iteration`.
+
+5. **Repeat**:
+   - Continue until either the tolerance \( \varepsilon \) is satisfied or the maximum number of iterations is reached.
+
+6. **Output**:
+   - If the method converges: Output the root approximation \( x_1 \).
+   - If the method does not converge after `max_iter`, report that the method failed to find a root within the given iterations.
+
+#
 ## Contributing
 Contributions and improvements are welcome! Feel free to submit pull requests or open issues.
  
